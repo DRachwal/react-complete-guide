@@ -7,17 +7,13 @@ import CartItem from './CartItem';
 const Cart = () => {
   const cart = useSelector(state => state.cart);
 
-  console.log('cart', cart);
-
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>
         {cart.items.map(item => <CartItem
           key = {item.id}
-          title = {item.title}
-          quantity = {item.quantity}
-          price = {item.price}
+          {...item}
         />)}
       </ul>
     </Card>
