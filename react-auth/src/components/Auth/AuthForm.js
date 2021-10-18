@@ -15,35 +15,38 @@ const AuthForm = () => {
   };
 
   const submitHandler = e => {
-    console.log('submitHandler');
     e.preventDefault();
 
     const email = emailInputRef.current.value;
     const password = passwordInputRef.current.value;
 
-    if (isLogin) {
+    setIsLoading(true);
 
-    } else {
-      setIsLoading(true);
-      axios
-        .post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBhGnKlRP5hKgQASPoFG8f0HU4winTg3bg', {
-          email,
-          password,
-          returnSecureToken: true
-        }, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-          setIsLoading(false);
-          console.log(response);
-        })
-        .catch(error => {
-          setIsLoading(false);
-          alert(error.response.data.error.message);
-        })
-    }
+    let url;
+
+    if (isLogin)
+      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBhGnKlRP5hKgQASPoFG8f0HU4winTg3bg';
+    else
+      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBhGnKlRP5hKgQASPoFG8f0HU4winTg3bg';
+
+    axios
+      .post(url, {
+        email,
+        password,
+        returnSecureToken: true
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        setIsLoading(false);
+        console.log('response', response);
+      })
+      .catch(error => {
+        setIsLoading(false);
+        alert(error.response.data.error.message);
+      })
   }
 
   return (
