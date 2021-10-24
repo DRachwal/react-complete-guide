@@ -48,7 +48,6 @@ const AuthForm = () => {
         }
       })
       .then(response => {
-        console.log('response', response);
         setIsLoading(false);
         authCtx.login(response.data.idToken);
         history.replace('/');
