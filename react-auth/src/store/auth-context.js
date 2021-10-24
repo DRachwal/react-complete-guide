@@ -6,13 +6,24 @@ const AuthContext = createContext({
     logout: () => { }
 });
 
+const getRemainingTime = expirationTime => {
+    const currentTime = new Date().getTime(); // Get current time [ms]
+    const adjExpirationTime = new Date(expirationTime).getTime() // Get expiration time [ms]
+    const remainingTime = adjExpirationTime - currentTime;
+
+    return remainingTime;
+};
+
 export const AuthContextProvider = ({ children }) => {
     const initialToken = localStorage.getItem('token');
     const [token, setToken] = useState(initialToken);
 
-    const loginHandler = token => {
+    const loginHandler = (token, expirationTime) => {
         setToken(token);
         localStorage.setItem('token', token);
+
+        const remainingTime = getRemainingTime(expirationTime);
+        setTimeout(logoutHandler, remainingTime); // Logout after token expires
     };
 
     const logoutHandler = () => {
