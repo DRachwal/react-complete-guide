@@ -8,8 +8,7 @@ const AuthContext = createContext({
 
 const getRemainingTime = expirationTime => {
     const currentTime = new Date().getTime(); // Get current time [ms]
-    const adjExpirationTime = new Date(expirationTime).getTime() // Get expiration time [ms]
-    const remainingTime = adjExpirationTime - currentTime;
+    const remainingTime = expirationTime - currentTime;
 
     return remainingTime;
 };
