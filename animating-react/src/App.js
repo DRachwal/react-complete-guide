@@ -1,23 +1,32 @@
-import React, { Component } from "react";
+import React, { useState } from 'react';
 
-import "./App.css";
-import Modal from "./components/Modal/Modal";
-import Backdrop from "./components/Backdrop/Backdrop";
-import List from "./components/List/List";
+import Modal from './components/Modal/Modal';
+import List from './components/List/List';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>React Animations</h1>
-        <Modal />
-        <Backdrop />
-        <button className="Button">Open Modal</button>
-        <h3>Animating Lists</h3>
-        <List />
-      </div>
-    );
-  }
+import './App.css';
+
+const App = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const showModalHandler = () => {
+    setShowModal(true);
+  };
+
+  const hideModalHandler = () => {
+    setShowModal(false);
+  };
+
+  return (
+    <div className='App'>
+      <h1>React Animations</h1>
+      <Modal
+        show={showModal}
+        hideModalHandler={hideModalHandler} />
+      <button className='Button' onClick={showModalHandler}>Open Modal</button>
+      <h3>Animating Lists</h3>
+      <List />
+    </div>
+  );
 }
 
 export default App;

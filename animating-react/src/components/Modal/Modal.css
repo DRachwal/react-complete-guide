@@ -10,4 +10,47 @@
     top: 30%;
     left: 25%;
     width: 50%;
+    transition: all 0.5s ease-out;
+}
+
+.ModalShow {
+    animation: openModal 0.5s ease-out forwards
+    /* opacity: 1;
+    transform: translateY(0); */
+}
+
+.ModalHide {
+    animation: hideModal 0.5s ease-out forwards
+    /* opacity: 0;
+    transform: translateY(-100%); */
+}
+
+@keyframes openModal {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hideModal {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(60%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
 }
