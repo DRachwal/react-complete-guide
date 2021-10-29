@@ -1,6 +1,11 @@
-import { FormEvent, useRef } from 'react';
+import { FormEvent, useRef, FC, useContext } from 'react';
+import TodoContext from '../store/todo-context';
 
-const NewTodo = () => {
+import classes from './NewTodo.module.css';
+
+const NewTodo: FC = () => {
+    const todoCtx = useContext(TodoContext);
+
     const nameInputRef = useRef<HTMLInputElement>(null);
 
     const submitHandler = (e: FormEvent) => {
@@ -12,11 +17,11 @@ const NewTodo = () => {
         if (name.trim().length === 0)
             return;
 
-        console.log('name', name);
+        todoCtx.addTodoHandler(name);
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={classes.form}>
             <label htmlFor='name'>Name</label>
             <input type='text' id='name' ref={nameInputRef} />
             <button type='submit'>Add</button>
