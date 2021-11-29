@@ -17,7 +17,7 @@ const Header: FC = () => {
                     <li>
                         <NavLink to='/'>Customers</NavLink>
                     </li>
-                    <li>
+                    <li className={classes.cta}>
                         <NavLink to='/'>Start Hosting</NavLink>
                     </li>
                 </ul>
