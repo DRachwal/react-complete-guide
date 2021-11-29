@@ -1,12 +1,14 @@
+import Layout from './components/Layout/Layout';
+
 import classes from './App.module.css';
 
 const App = () => {
   return (
-    <main>
+    <Layout>
       <section className={classes.section}>
         <h1>Get the freedom you deserve</h1>
       </section>
-    </main>
+    </Layout>
   );
 }
 
