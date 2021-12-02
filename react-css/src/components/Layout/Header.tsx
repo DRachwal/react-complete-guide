@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
 
 const Header: FC = () => {
-    return (
+    return (<>
         <header className={classes.header}>
             <div>
                 <NavLink to='/'>uHost</NavLink>
@@ -23,6 +23,10 @@ const Header: FC = () => {
                 </ul>
             </nav>
         </header>
+        <section className={classes.section}>
+            <h1>Get the freedom you deserve</h1>
+        </section>
+    </>
     );
 };
 

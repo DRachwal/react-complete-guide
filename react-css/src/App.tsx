@@ -1,13 +1,10 @@
 import Layout from './components/Layout/Layout';
-
-import classes from './App.module.css';
+import Plans from './components/Plans/Plans';
 
 const App = () => {
   return (
     <Layout>
-      <section className={classes.section}>
-        <h1>Get the freedom you deserve</h1>
-      </section>
+      <Plans/>
     </Layout>
   );
 }
