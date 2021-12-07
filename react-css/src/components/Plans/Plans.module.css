@@ -1,7 +1,13 @@
 .plans {
-    background: #f8f8f8;
+    padding: 40px 20px 100px 20px;
 }
 
 .plans h1 {
     text-align: center;
+}
+
+.plans div {
+    text-align: center;
+    width: 80%;
+    margin: auto;
 }

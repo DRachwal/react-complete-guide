@@ -1,0 +1,47 @@
+.package {
+    position: relative;
+    background: rgba(59, 89, 152, 0.9);
+    border: 4px solid #1d2b49;
+    border-radius: 8px;
+    width: 60%;
+    margin: 16px 32px;
+    padding: 32px 32px 16px 32px;
+}
+
+.float {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 12px;
+    background: #1d2b49;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.package:hover,
+.package:active {
+    background: rgba(29, 43, 73, 0.9);
+}
+
+.package a {
+    text-decoration: none;
+    color: #f8f9fa;
+    /* display: block; */
+}
+
+.package p {
+    padding: 16px;
+    border: 4px solid #1d2b49;
+    border-radius: 8px;
+    color: #1d2b49;
+    background: #f8f9fa;
+}

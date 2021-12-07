@@ -15,7 +15,7 @@ const Plan: FC<{title: string, price: number, description: string, options: Arra
             <h2 className={classes.price}>${price}/month</h2>
             <h3>{description}</h3>
             <ul>
-                {options.map(option => <li>{option}</li>)}
+                {options.map(option => <li key={option}>{option}</li>)}
             </ul>
             <div>
                 <Button>CHOOSE PLAN</Button>

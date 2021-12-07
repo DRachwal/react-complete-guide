@@ -12,7 +12,7 @@ const Header: FC = () => {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to='/'>Packages</NavLink>
+                        <NavLink to='/packages'>Packages</NavLink>
                     </li>
                     <li>
                         <NavLink to='/'>Customers</NavLink>
@@ -23,9 +23,6 @@ const Header: FC = () => {
                 </ul>
             </nav>
         </header>
-        <section className={classes.section}>
-            <h1>Get the freedom you deserve</h1>
-        </section>
     </>
     );
 };

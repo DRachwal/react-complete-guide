@@ -1,12 +1,12 @@
 .plan {
     background: #3b5998;
     text-align: center;
-    padding: 16px;
+    padding: 24px 16px;
     margin: 8px;
     display: inline-block;
     width: 30%;
     vertical-align: middle;
-    color: #f8f8f8;
+    color: #f8f9fa;
     border-radius: 8px;
 }
 
@@ -16,19 +16,11 @@
 }
 
 .plan .recommended {
-    background: #f8f8f8;
+    background: #f8f9fa;
     color: #1d2b49;
     padding: 16px 8px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-}
-
-.plan .title {
-
-}
-
-.plan .price {
-
 }
 
 .plan ul {

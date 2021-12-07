@@ -6,6 +6,7 @@ import classes from './Plans.module.css';
 
 const PLANS = [
     {
+        id: 1,
         title: 'FREE',
         price: 0,
         description: 'For hobby projects or small teams.',
@@ -17,6 +18,7 @@ const PLANS = [
         ],
         recommended: false
     }, {
+        id: 2,
         title: 'RECOMMENDED',
         price: 29,
         description: 'For ambitious projects.',
@@ -28,6 +30,7 @@ const PLANS = [
         ],
         recommended: true
     }, {
+        id: 3,
         title: 'PREMIUM',
         price: 99,
         description: 'Your enterprise solution.',
@@ -45,7 +48,8 @@ const Plans: FC = () => {
     <section className={classes.plans}>
         <h1>Choose your plan</h1>
         <div>
-            {PLANS.map(plan => <Plan 
+            {PLANS.map(plan => <Plan
+                key={plan.id}
                 title={plan.title}
                 price={plan.price}
                 description={plan.description}

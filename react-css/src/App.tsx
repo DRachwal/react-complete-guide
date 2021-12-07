@@ -1,10 +1,17 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Layout from './components/Layout/Layout';
-import Plans from './components/Plans/Plans';
+import Home from './pages/Home';
+import Packages from './pages/Packages';
 
 const App = () => {
   return (
     <Layout>
-      <Plans/>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/packages' element={<Packages />} />
+            <Route path='*' element={<Navigate to='/' />}/>
+        </Routes>
     </Layout>
   );
 }
