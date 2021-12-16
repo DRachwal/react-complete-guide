@@ -1,6 +1,6 @@
 .image {
     margin-top: 68px;
-    background: url('../../assets/images/header.jpg') left 0% top 20%/cover no-repeat border-box;
+    background: linear-gradient(rgba(59, 89, 152, 0.6), rgba(59, 89, 152, 0.4)), url('../../assets/images/header.jpg') left 0% top 20%/cover no-repeat border-box;
     /* background-repeat: no-repeat;
     background-origin: border-box;
     background-clip: border-box; */

@@ -2,13 +2,13 @@ import { FC } from 'react';
 
 import classes from './Benefit.module.css';
 
-const Benefit: FC<{benefit: string}> = ({ benefit }) => {
+const Benefit: FC<{name: string}> = ({ name, children }) => {
     return (
         <li className={classes.benefit}>
             <div>
-
+                {children}
             </div>
-            <p>{benefit}</p>
+            <p>{name}</p>
         </li>
     );
 };
